@@ -1,0 +1,144 @@
+form {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+h2,
+h3 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-right: 50px;
+  margin-bottom: 5%;
+}
+
+h3 {
+  font-size: 1rem;
+  margin-bottom: 0;
+  margin-top: 40px;
+}
+
+label {
+  margin-top: 30px;
+}
+
+.nombre-y-apellido {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nombre-y-apellido label {
+  margin-top: 0%;
+  width: 45%;
+  height: 50px;
+}
+
+.label-email {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.label-radio {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.label-radio input {
+  width: auto;
+}
+
+input,
+textarea{
+  width: 80%;
+  border: none;
+  margin: 5px;
+  padding: 10px;
+  background-color: #fd68683d;
+  border-radius: 10px;
+}
+
+select {
+  width: auto;
+  height: auto;
+  border: none;
+  margin-left: 20px;
+  padding: 10px;
+  background-color: #fd68683d;
+  border-radius: 10px;
+}
+
+select:focus {
+  outline: none;
+  border: solid 1px #fd6868;
+  border-radius: 10px;
+  box-shadow: 0px 0px 7px #fd6868;
+}
+
+textarea::placeholder {
+  color: #4c3f54;
+}
+input::placeholder {
+  color: #4c3f54;
+}
+
+textarea {
+  height: 180px;
+}
+
+.label-textarea{
+  display: flex;
+  margin-top: 30px;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border: solid 1px #fd6868;
+  border-radius: 10px;
+  box-shadow: 0px 0px 7px #fd6868;
+}
+
+textarea:focus {
+  outline: none;
+  border: solid 1px #fd6868;
+  box-shadow: 0px 0px 7px #fd6868;
+  border-radius: 20px;
+}
+
+input[type="radio"]:focus {
+  outline: auto;
+  width: auto;
+  box-shadow: 0px 0px 5px #c75a5a;
+}
+
+input[type="submit"] {
+  padding: 15px;
+  width: 130px;
+  background-color: #fd6868;
+  border-radius: 20px;
+  font-size: 1.2rem;
+}
+
+input[type="submit"]:hover {
+  background-color: #27b4a8;
+  border: #27b4a8;
+}
+
+input[type="submit"]:active {
+  background-color: #27b4a8;
+}
+
+/*///// RESPONSIVE FORMULARIO//////*/
+
+@media screen and (max-width: 900px) {
+  .nombre-y-apellido {
+    height: 130px;
+    flex-direction: column;
+  }
+
+  .nombre-y-apellido label {
+    width: 100%;
+  }
+}
