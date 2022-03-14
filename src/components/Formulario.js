@@ -47,8 +47,8 @@ const Formulario = () => {
     <form onSubmit={handleSubmit}>
       <h2>Escribime</h2>
 
-      <div class="nombre-y-apellido">
-        <label for="nombre">
+      <div className="nombre-y-apellido">
+        <label>
           Nombre*
           <input
             type="text"
@@ -63,7 +63,7 @@ const Formulario = () => {
           />
         </label>
 
-        <label for="apellido">
+        <label>
           Apellido*
           <input
             type="text"
@@ -79,7 +79,7 @@ const Formulario = () => {
         </label>
       </div>
 
-      <label for="email" className="label-email">
+      <label className="label-email">
         Email*
         <input
           type="email"

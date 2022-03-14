@@ -147,6 +147,9 @@ input[type="submit"]:active {
 /*///// RESPONSIVE FORMULARIO//////*/
 
 @media screen and (max-width: 900px) {
+  form {
+    width: 50%;
+  }
   .nombre-y-apellido {
     height: 130px;
     flex-direction: column;
@@ -154,5 +157,24 @@ input[type="submit"]:active {
 
   .nombre-y-apellido label {
     width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 800px) {
+  form {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  form {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  form {
+    width: 85%;
   }
 }
