@@ -1,7 +1,11 @@
-import Formulario from "./components/Formulario"
+import Formulario from "./components/Formulario";
 
-const App = () =>{
-  <Formulario/>
-}
+const App = () => {
+  return (
+    <>
+      <Formulario />
+    </>
+  );
+};
 
 export default App;
