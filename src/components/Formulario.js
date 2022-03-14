@@ -28,7 +28,7 @@ const Formulario = () => {
     e.preventDefault();
     let errores = { ...estadoInicial };
     Object.keys(datosFormulario).map((key) => {
-      if (datosFormulario[key] == "") {
+      if (datosFormulario[key] === "") {
         errores = {
           ...errores,
           [key]: `El campo ${key} no puede estar vacio`,
