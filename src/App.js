@@ -4,4 +4,4 @@ const App = () =>{
   <Formulario/>
 }
 
-export default Formulario;
+export default App;

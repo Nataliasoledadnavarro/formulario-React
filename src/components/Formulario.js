@@ -34,6 +34,7 @@ const Formulario = () => {
           [key]: `El campo ${key} no puede estar vacio`,
         };
       }
+      return ""
     });
 
     setErrores({ ...errores });
@@ -41,6 +42,7 @@ const Formulario = () => {
 
   const handleBlur  = () => {
     console.log("me hicieron foco")
+    //Podría agregar que valide mientras van cargando los datos. 
   }
 
   return (
