@@ -1,26 +1,29 @@
 form {
-  width: 80%;
+  width: 30%;
   margin: auto;
   display: flex;
   flex-direction: column;
+  padding: 20px;
+  box-shadow: #f1e1a6 0px 5px 15px;
+  background-color: white;
 }
 
 h2,
 h3 {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
-  margin-right: 50px;
-  margin-bottom: 5%;
+  margin: 10px;
+  margin-left: 0;
+  color: #f4bbbb;
 }
 
 h3 {
   font-size: 1rem;
-  margin-bottom: 0;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 label {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .nombre-y-apellido {
@@ -28,6 +31,11 @@ label {
   display: flex;
   justify-content: space-between;
 }
+
+.error {
+  border-bottom: 2px solid #f4bbbb;
+}
+
 
 .nombre-y-apellido label {
   margin-top: 0%;
@@ -45,36 +53,31 @@ label {
   display: flex;
   align-items: center;
   margin-top: 10px;
+  color: rgb(102, 100, 100);
 }
+
 .label-radio input {
   width: auto;
 }
 
 input,
-textarea{
+textarea {
   width: 80%;
   border: none;
   margin: 5px;
   padding: 10px;
-  background-color: #fd68683d;
-  border-radius: 10px;
+  background-color: #c3e5ae3f;
+  border-radius: 5px;
+  border: solid 1px transparent;
 }
 
 select {
-  width: auto;
-  height: auto;
-  border: none;
   margin-left: 20px;
   padding: 10px;
-  background-color: #fd68683d;
-  border-radius: 10px;
-}
-
-select:focus {
-  outline: none;
-  border: solid 1px #fd6868;
-  border-radius: 10px;
-  box-shadow: 0px 0px 7px #fd6868;
+  background-color: #c3e5ae3f;
+  border-radius: 5px;
+  border: solid 1px transparent;
+  color: rgb(163, 157, 157);
 }
 
 textarea::placeholder {
@@ -88,46 +91,57 @@ textarea {
   height: 180px;
 }
 
-.label-textarea{
+.label-textarea {
   display: flex;
   margin-top: 30px;
 }
 
+input::placeholder {
+  color:rgb(163, 157, 157);
+}
+
+textarea::placeholder {
+  color: rgb(163, 157, 157);
+}
+
 input[type="text"]:focus {
   outline: none;
-  border: solid 1px #fd6868;
-  border-radius: 10px;
-  box-shadow: 0px 0px 7px #fd6868;
+  border: solid 1px #f1e1a6;
+  border-radius: 5px;
 }
 
 textarea:focus {
   outline: none;
-  border: solid 1px #fd6868;
-  box-shadow: 0px 0px 7px #fd6868;
-  border-radius: 20px;
+  border: solid 1px #f1e1a6;
+  border-radius: 5px;
 }
 
-input[type="radio"]:focus {
-  outline: auto;
-  width: auto;
-  box-shadow: 0px 0px 5px #c75a5a;
+input[type="email"]:focus {
+  outline: none;
+  border: solid 1px #f1e1a6;
+  border-radius: 5px;
+}
+
+select:focus {
+  outline: none;
+  border: solid 1px #f1e1a6;
+  border-radius: 10px;
 }
 
 input[type="submit"] {
   padding: 15px;
   width: 130px;
-  background-color: #fd6868;
-  border-radius: 20px;
+  background-color: #97dbae;
+  border-radius: 5px;
   font-size: 1.2rem;
 }
 
 input[type="submit"]:hover {
-  background-color: #27b4a8;
-  border: #27b4a8;
+  background-color: #c3e5ae;
 }
 
 input[type="submit"]:active {
-  background-color: #27b4a8;
+  background-color: #c3e5ae;
 }
 
 /*///// RESPONSIVE FORMULARIO//////*/

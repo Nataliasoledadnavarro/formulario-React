@@ -2,16 +2,18 @@ import "./Formulario.css";
 import { useState } from "react";
 
 const Formulario = () => {
-  const [datosFormulario, setDatosFormulario] = useState({
+
+  const estadoInicial = {
     nombre: "",
     apellido: "",
     email: "",
     motivo: "",
     preferencia: "",
     mensaje: "",
-  });
+  }
+  const [datosFormulario, setDatosFormulario] = useState(estadoInicial);
 
-  const [error, setError] = useState(false);
+  const [errores, setErrores] = useState(estadoInicial);
 
   const handleChange = (e) => {
     // const valorDelInput = e.target.value
@@ -21,19 +23,28 @@ const Formulario = () => {
       [e.target.name]: e.target.value,
     });
   };
-  console.log(datosFormulario);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // if (!nombre || !edad || !provincia || !genero) {
-    //     setError(true)
-    // }
-    // else {
-    //   setError(false)
-    // }
+    let errores = { ...estadoInicial };
+    Object.keys(datosFormulario).map((key) => {
+      if (datosFormulario[key] == "") {
+        errores = {
+          ...errores,
+          [key]: `El campo ${key} no puede estar vacio`,
+        };
+      }
+    });
+
+    setErrores({ ...errores });
   };
 
+  const handleBlur  = () => {
+    console.log("me hicieron foco")
+  }
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <h2>Escribime</h2>
 
       <div class="nombre-y-apellido">
@@ -41,6 +52,8 @@ const Formulario = () => {
           Nombre*
           <input
             type="text"
+            className={errores.nombre && "error"}
+            onBlur={handleBlur}
             name="nombre"
             id="nombre"
             onChange={handleChange}
@@ -54,6 +67,8 @@ const Formulario = () => {
           Apellido*
           <input
             type="text"
+            className={errores.apellido && "error"}
+            onBlur={handleBlur}
             name="apellido"
             id="apellido"
             onChange={handleChange}
@@ -68,6 +83,8 @@ const Formulario = () => {
         Email*
         <input
           type="email"
+          className={errores.email && "error"}
+          onBlur={handleBlur}
           name="email"
           id="email"
           onChange={handleChange}
@@ -77,44 +94,50 @@ const Formulario = () => {
         />
       </label>
 
-      <h3>Motivo del contacto</h3>
-      <label className="label-radio">
+      <h3 className={errores.motivo && "error"}>Motivo del contacto</h3>
+      <label className = "label-radio" >
         Propuesta laboral
         <input
           type="radio"
+          
+          onBlur={handleBlur}
           value="trabajo"
           name="motivo"
           onChange={handleChange}
-          checked={datosFormulario.genero === "trabajo"}
+          checked={datosFormulario.motivo === "trabajo"}
         />
       </label>
       <label className="label-radio">
         Más info de mis proyectos
         <input
           type="radio"
+          onBlur={handleBlur}
           value="proyecto"
           name="motivo"
           id="proyecto"
           onChange={handleChange}
-          checked={datosFormulario.genero === "proyecto"}
+          checked={datosFormulario.motivo === "proyecto"}
         />
       </label>
       <label className="label-radio">
         Sugerencias
         <input
           type="radio"
+          onBlur={handleBlur}
           value="sugerencia"
           name="motivo"
           onChange={handleChange}
-          checked={datosFormulario.genero === "sugerencia"}
+          checked={datosFormulario.motivo === "sugerencia"}
         />
       </label>
       <label>
         Proyecto que más te gustó:
         <select
           name="preferencia"
+          onBlur={handleBlur}
           onChange={handleChange}
           value={datosFormulario.preferencia}
+          className={errores.preferencia && "error"}
         >
           <option value="portfolio">Portfolio</option>
           <option value="personales">Proyectos personales</option>
@@ -128,9 +151,11 @@ const Formulario = () => {
       <label className="label-textarea">
         Mensaje*
         <textarea
+          onBlur={handleBlur}
           wows="30"
           cols="40"
           name="mensaje"
+          className={errores.mensaje && "error"}
           onChange={handleChange}
           value={datosFormulario.mensaje}
           placeholder="Escriba su mensaje aquí"
